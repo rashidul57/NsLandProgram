@@ -1,0 +1,16 @@
+.pdf-viewer .MuiPaper-root {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dialog-close {
+    position: absolute;
+    color: white;
+    z-index: 999;
+    right: 0;
+    background: gray;
+}
