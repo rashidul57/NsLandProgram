@@ -1,4 +1,5 @@
 using DocMgmtApi.Data;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using XSSMiddleware;
 
@@ -25,13 +26,17 @@ builder.Services.AddDbContext<DocMgmtContext>(options => options.UseSqlServer(bu
 var app = builder.Build();
 app.UseCors(policy);
 
-// Content Security Policy (CSP) 
 app.Use(async (context, next) =>
 {
+    // increase upload size
+    context.Features.Get<IHttpMaxRequestBodySizeFeature>().MaxRequestBodySize = 100_000_000;
+
+    // Content Security Policy (CSP)
     string cdnSource = builder.Configuration.GetValue<string>("CdnSource");
     context.Response.Headers.Add("Content-Security-Policy", $"default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' {cdnSource}");
     await next();
 });
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

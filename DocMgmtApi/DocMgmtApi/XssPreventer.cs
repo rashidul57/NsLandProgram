@@ -58,7 +58,7 @@ namespace XSSMiddleware
 
                 var sanitiser = new HtmlSanitizer();
                 var sanitised = sanitiser.Sanitize(content);
-                if (content != sanitised.Replace("&amp;", "&"))
+                if (!content.Contains("form-data") && content != sanitised.Replace("&amp;", "&"))
                 {
                     await RespondWithAnError(context).ConfigureAwait(false);
                 }

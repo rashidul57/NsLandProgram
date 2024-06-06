@@ -12,7 +12,6 @@ export interface Props {
     onClose: (value: string) => void;
 }
 
-
 export default function DocumentViewer(props: Props) {
     const { onClose, selectedDoc, open } = props;
     const ext = getExt(selectedDoc?.name);

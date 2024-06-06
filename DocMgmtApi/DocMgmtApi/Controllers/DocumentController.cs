@@ -16,6 +16,7 @@ namespace DocMgmtApi.Controllers
         }
 
         //POST : api/documents
+        [RequestSizeLimit(100_000_000)]
         [HttpPost]
         public async Task<ActionResult<Document>> AddDocument([FromForm] Document document)
         {

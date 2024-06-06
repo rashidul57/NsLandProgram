@@ -67,8 +67,8 @@ const CustomerDetails = () => {
 
     return (
         <TableContainer component={Paper} elevation={0} sx={{ p: { xs: '5px', md: '10px 50px 0px 50px' }, width: 'auto' }}>
-            <Typography sx={{ fontWeight: 'bold' }}>Case Number: {selectedCustomer?.id}</Typography>
-            <Typography>{selectedCustomer?.firstName} {selectedCustomer?.lastName}</Typography>
+            <Typography sx={{ fontWeight: 'bold' }}>Documents of: {selectedCustomer?.firstName} {selectedCustomer?.lastName}</Typography>
+            <Typography>Case Number: {selectedCustomer?.id}</Typography>
             <Typography>{selectedCustomer?.address}, {selectedCustomer?.city}, {selectedCustomer?.country}</Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }}
                 spacing={{ xs: 1, sm: 2, md: 4 }}

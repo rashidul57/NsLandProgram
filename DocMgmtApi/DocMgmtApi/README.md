@@ -13,7 +13,7 @@ Server=localhost\\sqlexpress;database=DocumentMgmt;Integrated Security=True;Mult
 Server=host.docker.internal\\SQLEXPRESS;Initial Catalog=DocumentMgmt;User Id=rashid;password=123;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true;MultipleActiveResultSets=true;
 
 https://medium.com/@varunkukade999/javascript-data-encoding-and-decoding-techniques-buffers-byte-arrays-dataview-binary-219d55b535a2
-
+https://relevant.software/blog/microservices-on-aws/
 
 Sql-Injection:
 - Since c# is fully typed language and we are using .net core 8, everything is object but no raw query.
@@ -29,3 +29,7 @@ XSS:
 CSP(Content Security Policy):
 https://medium.com/@dayanandthombare/avoiding-cross-site-scripting-xss-attacks-in-c-and-net-core-f2682c547af9
 Added in program.cs
+
+
+Test:
+https://medium.com/c-sharp-progarmming/unit-testing-in-asp-net-core-web-api-b2e6f7bdb860
