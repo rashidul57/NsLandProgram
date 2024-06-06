@@ -12,7 +12,7 @@ export type Document = {
 export const emptyDocument = {
     name: '',
     data: '',
-    type: '',
+    type: 'Driving License',
     dateCreated: '',
     customerId: '',
 }

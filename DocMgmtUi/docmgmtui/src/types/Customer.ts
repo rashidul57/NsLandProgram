@@ -19,14 +19,14 @@ export type Customer = {
 // export type Gender = ControllerRenderProps<Entity, "gender">
 
 export const emptyCustomer = {
-    firstName: 'Cust',
-    lastName: 'ddf',
-    email: 'dd@dd.com',
-    address: 'dfdf',
-    city: 'dfdf',
-    state: 'dfd',
-    postalCode: 'dfdf',
-    country: 'Algeria',
-    phone: 'ddd',
-    gender: 'Female',
+    firstName: 'David',
+    lastName: 'Baker',
+    email: 'dbaker@gmail.com',
+    address: '25 Wall Street',
+    city: 'Halifax',
+    state: 'NS',
+    postalCode: 'B3A 2K9',
+    country: 'Canada',
+    phone: '9034854844',
+    gender: 'Male',
 }
