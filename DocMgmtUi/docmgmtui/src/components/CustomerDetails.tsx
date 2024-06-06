@@ -2,15 +2,12 @@ import * as React from 'react';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
 import { useState, useEffect, useContext } from 'react';
-import { DataRow } from '../types/TableInfo';
+import { CustomerRowData } from '../types/TableInfo';
 import _ from 'lodash';
-import CustomSelect from './CustomSelect';
 import { baseApiUrl } from '../data/configs';
 import { Button, Link, Popover, Stack, TextField, Typography } from '@mui/material';
 import DataContext from '../context/data-context';
 import TableView from './TableView';
-import InjectUid from '../utils/helper';
-import AddEditEntity from './AddEditCustomer';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { emptyDocument } from '../types/Document';
 import AddEditDocument from './AddEditDocument';
@@ -20,15 +17,14 @@ import { useNavigate } from 'react-router-dom';
 
 
 const CustomerDetails = () => {
-    //const [tableData, setTableData] = useState([] as DataRow[]);
     const navigate = useNavigate();
-    const [newDocument, setNewDocument] = useState({...emptyDocument});
+    const [newDocument, setNewDocument] = useState({ ...emptyDocument });
     // const [documents, setDocuments] = useState<Document[]>([]);
     const { customers, customerDocuments, setCustomerDocuments } = useContext(DataContext);
     const words = location.pathname.split('/');
     const [customerId, setCustomerId] = useState(words?.length ? words[2] : undefined);
     const selectedCustomer = customers.find(c => c.id === customerId);
-    //debugger;
+
     if (selectedCustomer?.id && !newDocument.customerId) {
         setNewDocument({ ...newDocument, customerId: selectedCustomer.id })
     }
@@ -40,7 +36,7 @@ const CustomerDetails = () => {
                 .then((res) => {
                     return res.json();
                 })
-                .then((data: DataRow[]) => {
+                .then((data: CustomerRowData[]) => {
                     setCustomerDocuments(data);
                 });
         }

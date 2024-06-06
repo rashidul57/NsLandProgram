@@ -9,27 +9,6 @@ import AddEditCustomer from './AddEditCustomer';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const CustomerDashboard = () => {
-    //const [tableData, setTableData] = useState([] as DataRow[]);
-
-    const [searchKey, setSearchKey] = useState('');
-
-    useEffect(() => {
-        const debounceTimer = setTimeout(() => {
-            // const url =  `${baseApiUrl}?country=${selectedCountry}&name=${searchKey}`;
-            // const start = Date.now();
-            // fetch(url)
-            //   .then((res) => {
-            //     setResCode(res.status);
-            //     return res.json();
-            //   })
-            //   .then((data: DataRow[]) => {
-            //     setTableData(InjectUid(data));
-            //     const milliSecs = (Date.now() - start);
-            //     setResTime(milliSecs);
-            //   });
-        }, 500);
-        return () => clearTimeout(debounceTimer);
-    }, [searchKey]);
 
     const [customerAnchorEl, setCustomerAnchorEl] = useState<HTMLButtonElement | null>(null);
 

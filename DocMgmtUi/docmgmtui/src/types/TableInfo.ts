@@ -22,8 +22,8 @@ export type DocumentRowData = {
 }
 
 export type FieldType = {
-  name: string,
-  label: string,
+    name: string,
+    label: string,
 }
 
 export const customerDisplayFields: FieldType[] = [

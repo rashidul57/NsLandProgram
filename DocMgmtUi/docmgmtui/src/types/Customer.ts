@@ -1,4 +1,3 @@
-import { ControllerRenderProps } from "react-hook-form";
 
 export type Customer = {
     id?: string,
