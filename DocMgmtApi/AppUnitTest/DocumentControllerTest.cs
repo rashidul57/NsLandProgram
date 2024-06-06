@@ -70,9 +70,9 @@ namespace AppUnitTest
         public async void UpdateDocument()
         {
             var result = await _docController.GetDocuments();
-            var toUpdateDocument = result.Value.ToArray().Last();
-            if (toUpdateDocument != null)
+            if (result.Value.Count() > 0)
             {
+                var toUpdateDocument = result.Value.ToArray().Last();
                 toUpdateDocument.Type = "changed type";
                 var result2 = await _docController.UpdateDocument(toUpdateDocument.Id, toUpdateDocument);
                 Assert.Equal(result2.Value.Type, toUpdateDocument.Type);
@@ -83,9 +83,9 @@ namespace AppUnitTest
         public async void DeleteDocument()
         {
             var result = await _docController.GetDocuments();
-            var toDeleteDocument = result.Value.Last();
-            if (toDeleteDocument != null)
+            if (result.Value.Count() > 0)
             {
+                var toDeleteDocument = result.Value.ToArray().Last();
                 IActionResult result2 = await _docController.DeleteDocument(toDeleteDocument.Id);
                 var res = result2 as ObjectResult;
                 //Api returns NoContent, so its null
