@@ -41,9 +41,9 @@ DocMgmtUi(Frontend)
   browser with blank dashboard, an empty table, and + customer button.
 
 
--------------------------------------------------------------------------------
-
-For production level deployment there are Dockerfile under each solution.
+-------------------
+Production Deployment:
+To ease the deployment in production, I have added Dockerfile in both frontend and backend projects.
 So, we can use those to build image and run the application in the container.
 
 
