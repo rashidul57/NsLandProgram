@@ -7,7 +7,7 @@
   "type": "chrome",
   "request": "launch",
   "url": "http://localhost:5173",
-  "webRoot": "C:\\Users\\19024\\source\\repos\\DocMgmtUi\\DocMgmtUi"
+  "webRoot": "C:\\Users\\19024\\source\\repos\\NsLandProgram\\DocMgmtUi\\DocMgmtUi"
 }</LaunchJsonTarget>
   </PropertyGroup>
 </Project>

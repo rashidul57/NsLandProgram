@@ -47,6 +47,7 @@ const CustomerDetails = () => {
     }, [customerId]);
 
 
+
     const [docAnchorEl, setDocAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const addDocument = (ev: React.MouseEvent<HTMLButtonElement>) => {

@@ -15,19 +15,10 @@ export interface Props {
 
 export default function DocumentViewer(props: Props) {
     const { onClose, selectedDoc, open } = props;
-    const [imgData, setImgData] = useState();
     const ext = getExt(selectedDoc?.name);
     const handleDialogClose = () => {
         onClose(selectedDoc);
     };
-    //useEffect(() => {
-
-    //    if (open) {
-    //        const byteArray = binaryToBytesArray(selectedDoc.data);
-    //        const base64 = arrayBufferToBase64(byteArray);
-    //        setImgData(base64);
-    //    }
-    //}, [open, selectedDoc]);
 
     const dialogCls = ext === 'pdf' ? 'pdf-viewer' : '';
 
@@ -60,8 +51,9 @@ export default function DocumentViewer(props: Props) {
                             }
                             return <iframe style={iframeStyle} src={objectURL} />
                         }
-                        default:
+                        default: {
                             return <Paper sx={{ p: 5, fontSize: 25 }}>Preview of this file type not supported yet.</Paper>
+                        }
                     }
                 }
             })()}

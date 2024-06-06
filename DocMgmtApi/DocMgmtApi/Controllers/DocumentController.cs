@@ -52,7 +52,7 @@ namespace DocMgmtApi.Controllers
             {
                 return NotFound();
             }
-            return await _docMgmtContext.Documents.ToListAsync();
+            return await _docMgmtContext.Documents.Where(d => d.CustomerId.Equals(customerId)).ToListAsync();
         }
 
         //GET : api/documents/id
